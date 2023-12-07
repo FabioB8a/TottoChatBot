@@ -1,6 +1,6 @@
 "use client";
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger} from '@/app/components/ui/accordion'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger} from '@/components/ui/accordion'
 import { FC } from 'react'
 import ChatHeader from './ChatHeader';
 import ChatInput from './ChatInput';
