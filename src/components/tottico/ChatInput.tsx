@@ -23,14 +23,17 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ messages: 'Tottico' }),
+            body: JSON.stringify({ messages: [_message]}),
           })
     
           return response.body
         },
         onSuccess: async (stream) => {
           console.log("Bien")
-          }
+          },
+        onError: async(stream) => {
+            console.log("AYUDA")
+        }
 
     })
     
