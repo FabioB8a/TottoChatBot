@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from '@/lib/utils'
+import { Message } from '@/lib/validators/message';
 import { useMutation } from '@tanstack/react-query';
 import { nanoid } from 'nanoid';
 import { FC, HTMLAttributes, useContext, useRef, useState } from 'react'
@@ -12,9 +13,11 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
 
     const [input, setInput] = useState<string>('')
 
-    const { mutate: sendMessage } = useMutation({
+    const { mutate: sendMessage} = useMutation({
 
-        mutationFn: async () => {
+        mutationKey: ['sendMessage'],
+
+        mutationFn: async (_message: Message) => {
           const response = await fetch('/api/message', {
             method: 'POST',
             headers: {
@@ -28,7 +31,8 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
         onSuccess: async (stream) => {
           console.log("Bien")
           }
-        })
+
+    })
     
     return (
         <div {...props} className={cn('border-t border-zinc-1000', className)}>
@@ -38,11 +42,13 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
                         if (e.key === 'Enter' && !e.shiftKey){
                             e.preventDefault()
 
-                            const message= {
+                            const message: Message = {
                                 id: nanoid(),
                                 isUserMessage: true,
                                 text: input,
                             }
+
+                            sendMessage(message)
                         }
                     }}
                     rows={2}
