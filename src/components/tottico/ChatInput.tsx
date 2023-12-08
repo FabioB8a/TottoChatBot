@@ -1,5 +1,6 @@
 "use client";
 
+import { MessagesContext } from '@/context/messages';
 import { cn } from '@/lib/utils'
 import { Message } from '@/lib/validators/message';
 import { useMutation } from '@tanstack/react-query';
@@ -12,6 +13,15 @@ interface ChatInputProps extends HTMLAttributes<HTMLDivElement> {}
 const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
 
     const [input, setInput] = useState<string>('')
+    const textareaRef = useRef<HTMLTextAreaElement | null>(null)
+
+    const {
+        messages,
+        addMessage,
+        removeMessage,
+        updateMessage,
+        setIsMessageUpdating,
+      } = useContext(MessagesContext)
 
     const { mutate: sendMessage} = useMutation({
 
@@ -28,9 +38,35 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     
           return response.body
         },
+        onMutate(message) {
+          addMessage(message)
+        },
         onSuccess: async (stream) => {
-          console.log("Bien")
-          },
+
+            if (!stream) throw new Error('No stream')
+            const id = nanoid()
+            const responseMessage: Message = {
+                id,
+                isUserMessage: false,
+                text: '',
+              }
+        
+            // add new message to state
+            addMessage(responseMessage)
+
+            setIsMessageUpdating(true)
+
+            const reader = stream.getReader()
+            const decoder = new TextDecoder()
+            let done = false
+
+            while (!done) {
+                const { value, done: doneReading } = await reader.read()
+                done = doneReading
+                const chunkValue = decoder.decode(value)
+                updateMessage(id, (prev) => prev + chunkValue)
+            }
+        },
         onError: async(stream) => {
             console.log("AYUDA")
         }
@@ -54,6 +90,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
                             sendMessage(message)
                         }
                     }}
+                    ref ={textareaRef}
                     rows={2}
                     maxRows={4}
                     value={input}

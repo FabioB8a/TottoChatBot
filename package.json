@@ -17,6 +17,7 @@
     "clsx": "^2.0.0",
     "eventsource-parser": "^1.1.1",
     "lucide-react": "^0.294.0",
+    "marky-markdown-lite": "^1.2.0",
     "nanoid": "^5.0.4",
     "next": "^14.0.3",
     "react": "^18.2.0",
