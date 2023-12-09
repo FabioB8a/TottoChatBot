@@ -5,12 +5,7 @@ import { Message } from '@/lib/validators/message'
 const defaultValue = [
   {
     id: nanoid(),
-    text: '¡Hola! Soy Tottico',
-    isUserMessage: false,
-  },
-  {
-    id: nanoid(),
-    text: '¿Estás preparado para la siguiente aventura?',
+    text: '¡Hola! Soy Tottico ¿Estás preparado para la siguiente aventura?',
     isUserMessage: false,
   },
   {
