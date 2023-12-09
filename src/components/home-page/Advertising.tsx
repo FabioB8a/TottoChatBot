@@ -2,21 +2,18 @@ import { FC } from "react";
 
 const Advertising: FC = () => {
   return (
-      <div>
-          <nav className="flex justify-between w-screen px-5">
-            <div className="item-nav flex items-center space-x-2">
-              <a>Totto Travel</a>
-              <p> | </p>
-              <a>Totto Kids</a>
-              <p> | </p>
-              <a>Totto Pets</a>
-            </div>
-            <div className="item-nav flex items-center space-x-2">
-              <a>Escribenos por WhatsApp</a>
-              <p> | </p>
-              <a>Servicio al cliente</a>
-            </div>
-        </nav>
+      <div className="adv flex flex-col justify-center items-center">
+          <div className="bg-black-500 w-screen flex justify-center">
+            <p>Envío GRATIS por compras superiores a $149.900 Aplican T&C.</p>
+          </div>
+          <div>
+            Descubre el mundo con Tottico
+            Juntos por el mundo
+            <button>Conoce a Tottico</button>
+          </div>
+          <div className="bg-red-500 w-screen flex justify-center">
+            <p>Tottico, nuestro asesor virtual (inteligencia artificial) responde a tus necesidades de forma personalizada</p>
+          </div>
       </div>
      
   );
