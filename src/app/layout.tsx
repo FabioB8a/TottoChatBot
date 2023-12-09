@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Chat from '@/components/tottico/Chat'
 import Providers from '@/components/logic/Providers'
+import Header from '@/components/home-page/HomePage'
 
 const inter = Inter({ subsets: ['latin'] })
 

@@ -5,7 +5,17 @@ import { Message } from '@/lib/validators/message'
 const defaultValue = [
   {
     id: nanoid(),
-    text: '¡Hola! Soy Tottico, tu asistente virtual ¿Cómo puedo ayudarte?',
+    text: '¡Hola! Soy Tottico',
+    isUserMessage: false,
+  },
+  {
+    id: nanoid(),
+    text: '¿Estás preparado para la siguiente aventura?',
+    isUserMessage: false,
+  },
+  {
+    id: nanoid(),
+    text: '¿A dónde viajaremos?',
     isUserMessage: false,
   },
 ]
