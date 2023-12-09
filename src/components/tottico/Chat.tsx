@@ -17,7 +17,7 @@ const Chat: FC= () =>{
             <AccordionTrigger className='px-6 border-b border-zinc-300'>
                 <ChatHeader/>
             </AccordionTrigger>
-            <AccordionContent>
+            <AccordionContent className='pb-1'>
               <div className='flex flex-col h-80'>
                 <ChatMessages className='px-2 py-3 flex-1' />
                 <ChatInput className='px-2' />
