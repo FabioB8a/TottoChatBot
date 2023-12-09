@@ -92,8 +92,8 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
                         }
                     }}
                     ref ={textareaRef}
-                    rows={2}
-                    maxRows={4}
+                    rows={1}
+                    maxRows={1}
                     value={input}
                     autoFocus
                     disabled={isPending}
