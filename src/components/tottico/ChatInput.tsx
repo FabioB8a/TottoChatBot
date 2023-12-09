@@ -75,7 +75,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     
     return (
         <div {...props} className={cn('border-t border-zinc-1000', className)}>
-            <div className='relative mt-1 mr-5 ml-5 flex-1 overflow-hidden rounded-lg outline-none'>
+            <div className='relative mt-1 mr-1 ml-1 mb-1 flex-1 overflow-hidden rounded-lg outline-none'>
                 <TextareaAutosize
                     onKeyDown={(e) => {
                         if (e.key === 'Enter' && !e.shiftKey){
@@ -98,6 +98,11 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
                     onChange={(e) => setInput(e.target.value)}
                     placeholder='Escribe...'
                     className='peer disabled:opacity-1 pr-16 resize-none block w-full border-0 bg-zinc-100 py-1.5 text-gray-900 focus:ring-0 text-sm sm:leading-6'
+                />
+
+            <div
+                className='absolute inset-x-0 bottom-0 border-t border-gray-300 peer-focus:border-t-2 peer-focus:border-red-600'
+                aria-hidden='true'
                 />
             </div>
         </div>
