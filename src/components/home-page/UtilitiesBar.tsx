@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const UtilitiesBar: FC = () => {
   return (
-      <div className="utilites flex flex-row justify-between px-20">
+      <div className="utilites flex flex-row justify-between px-20 border-b">
           <div className="flex flex-row items-center  ">
             <label>
               <Image
