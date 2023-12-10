@@ -1,32 +1,45 @@
 "use client";
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger} from '@/components/ui/accordion'
-import { FC } from 'react'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { FC, useState } from 'react';
 import ChatHeader from './ChatHeader';
 import ChatInput from './ChatInput';
 import ChatMessages from './ChatMessages';
 
-const Chat: FC= () =>{
-    return <Accordion
-    type='single'
-    collapsible
-    className='fixed bg-white z-40 shadow'>
-        <AccordionItem value='item-1'>
-        <div className='fixed right-8 w-100 bottom-8 bg-white border border-gray-200 rounded-md overflow-hidden'>
-            <div className='w-full h-full flex flex-col'>
-            <AccordionTrigger className='px-6 border-b border-zinc-300'>
-                <ChatHeader/>
+const Chat: FC = () => {
+  const [triggerEjecutado, setTriggerEjecutado] = useState(false);
+
+  const handleTrigger = () => {
+    // Puedes realizar cualquier lógica adicional aquí antes de cambiar el estado
+    setTriggerEjecutado(!triggerEjecutado);
+  };
+
+  return (
+    <Accordion
+      type='single'
+      collapsible
+      className='fixed bg-transparent z-40 shadow'
+    >
+      <AccordionItem value='item-1'>
+        <div className='fixed right-8 w-100 bottom-8 bg-transparent rounded-md overflow-hidden'>
+          <div className='w-full h-full flex flex-col'>
+            <AccordionTrigger
+              className={`px-6 border-b border-zinc-300 ${triggerEjecutado ? 'bg-white' : 'bg-transparent border-none'}`}
+              onClick={handleTrigger}
+            >
+              <ChatHeader triggerEjecutado={triggerEjecutado} />
             </AccordionTrigger>
-            <AccordionContent className='pb-1'>
+            <AccordionContent className='pb-1 bg-white'>
               <div className='flex flex-col h-80'>
                 <ChatMessages className='px-2 py-3 flex-1' />
                 <ChatInput className='px-2' />
               </div>
             </AccordionContent>
-            </div>
+          </div>
         </div>
-        </AccordionItem>
-  </Accordion>
-}
+      </AccordionItem>
+    </Accordion>
+  );
+};
 
-export default Chat
+export default Chat;

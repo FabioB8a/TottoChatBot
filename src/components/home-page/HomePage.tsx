@@ -5,7 +5,7 @@ import RoutesBar from "./RoutesBar";
 import Advertising from "./Advertising";
 
 const HomePage: FC= () =>{
-    return  <div className="h-screen w-screen flex flex-col">
+    return  <div className="h-screen w-screen bg-white flex flex-col">
                 <Header/>
                 <UtilitiesBar/>
                 <RoutesBar/>

@@ -67,6 +67,14 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
                 const chunkValue = decoder.decode(value)
                 updateMessage(id, (prev) => prev + chunkValue)
             }
+
+            setIsMessageUpdating(false)
+            setInput('')
+
+            setTimeout(() => {
+              textareaRef.current?.focus()
+            }, 10)
+
         },
         onError: async(stream) => {
             console.log("AYUDA")
