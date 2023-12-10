@@ -4,7 +4,7 @@ import Image from 'next/image';
 const UtilitiesBar: FC = () => {
   return (
       <div className="utilites flex flex-row justify-between px-20 border-b">
-          <div className="flex flex-row items-center  ">
+          <div className="flex flex-row items-center">
             <label>
               <Image
               src="/images/icons/search.svg"  
@@ -13,8 +13,7 @@ const UtilitiesBar: FC = () => {
               height={50} 
               />
             </label>
-            <input className="border-none border-b border-solid border-black" />
-
+            <input className="border-b border-solid border-black border-t-0 border-l-0 border-r-0 border-b-2 w-20" />
           </div>
           <div>
           <Image
