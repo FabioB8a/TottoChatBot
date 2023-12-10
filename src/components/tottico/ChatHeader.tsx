@@ -1,24 +1,26 @@
 import { FC } from 'react'
 import Image from 'next/image';
 
-const ChatHeader: FC<{ triggerEjecutado: boolean }> = ({ triggerEjecutado }) => {
+const ChatHeader: FC<{ trigger: boolean }> = ({ trigger }) => {
   return (
     <div className='w-full flex gap-3 justify-center items-center text-zinc-800'>
-      {triggerEjecutado ? (
-        <div className='flex flex-col items-start text-sm justify-center'>
-          <p className='text-xs'>¿Necesitas una mano para tu próxima aventura?</p>
-          <div className='flex gap-1.5 items-center justify-center'>
-          <div className='border-2 border-white rounded-full overflow-hidden'>
-              <Image
-                src="/images/logo/TOTTOid.png"
-                alt="Search"
-                width={50}
-                height={50}
-              />
-            </div>
-            <p className='font-medium'>Tottico: Tu consejero</p>
-          </div>
+      {trigger ? (
+        <div className='h-12 flex flex-row items-center text-sm justify-center'>
+        <div className='overflow-hidden mr-5 mt-2 mb-0 pt-0 pb-0 flex flex-col items-center'>
+          <Image
+            src="/images/logo/ID_3DBlack2.png"
+            alt="Search"
+            width={90}
+            height={50}
+          />
         </div>
+        <div className='mt-1 chat flex flex-col items-start'>
+          <p className='font-light text-xs'>¿Necesitas una mano para</p>
+          <p className='font-light text-xs mb-2'>tu próxima aventura?</p>
+          <p className='font-bold'>Tottico: Tu consejero</p>
+        </div>
+      </div>
+      
       ) : (
         <div className="flex items-center">
           <div className="relative bg-gray-300 p-4 rounded-ld shadow-md">

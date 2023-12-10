@@ -27,14 +27,14 @@ const ChatMessages: FC<ChatMessagesProps> = ({ className, ...props }) => {
                 'justify-end': message.isUserMessage,
               })}>
               <div
-                className={cn('flex flex-col space-y-2 text-sm max-w-xs mx-2 overflow-x-hidden', {
+                className={cn('flex flex-col-reverse space-y-2 text-xs max-w-xs mx-2 overflow-x-hidden', {
                   'order-1 items-end': message.isUserMessage,
                   'order-2 items-start': !message.isUserMessage,
                 })}>
                 <p
                   className={cn('px-4 py-2 rounded-xl', {
                     'bg-black text-white': message.isUserMessage,
-                    'bg-gray-200 text-gray-500': !message.isUserMessage,
+                    'bg-white text-gray-500': !message.isUserMessage,
                   })}>
                   <MarkdownLite text={message.text} />
                 </p>

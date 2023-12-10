@@ -7,11 +7,11 @@ import ChatInput from './ChatInput';
 import ChatMessages from './ChatMessages';
 
 const Chat: FC = () => {
-  const [triggerEjecutado, setTriggerEjecutado] = useState(false);
+  const [trigger, settrigger] = useState(false);
 
   const handleTrigger = () => {
     // Puedes realizar cualquier lógica adicional aquí antes de cambiar el estado
-    setTriggerEjecutado(!triggerEjecutado);
+    settrigger(!trigger);
   };
 
   return (
@@ -24,10 +24,10 @@ const Chat: FC = () => {
         <div className='fixed right-8 w-100 bottom-0 bg-transparent rounded-md overflow-hidden'>
           <div className='w-full h-full flex flex-col'>
             <AccordionTrigger
-              className={`rounded-t-2xl px-6 border-b border-zinc-300 ${triggerEjecutado ? 'bg-white' : 'bg-transparent border-none'}`}
+              className={`rounded-t-2xl px-6 border-b border-zinc-300 ${trigger ? 'bg-white' : 'bg-transparent border-none'}`}
               onClick={handleTrigger}
             >
-              <ChatHeader triggerEjecutado={triggerEjecutado} />
+              <ChatHeader trigger={trigger}  />
             </AccordionTrigger>
             <AccordionContent className='pb-1 bg-red-500'>
               <div className='flex flex-col h-80'>
