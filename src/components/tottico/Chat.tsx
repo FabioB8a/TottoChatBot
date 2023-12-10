@@ -18,21 +18,21 @@ const Chat: FC = () => {
     <Accordion
       type='single'
       collapsible
-      className='fixed bg-transparent z-40 shadow'
+      className='absolute bg-transparent z-90 shadow'
     >
       <AccordionItem value='item-1'>
-        <div className='fixed right-8 w-100 bottom-8 bg-transparent rounded-md overflow-hidden'>
+        <div className='fixed right-8 w-100 bottom-0 bg-transparent rounded-md overflow-hidden'>
           <div className='w-full h-full flex flex-col'>
             <AccordionTrigger
-              className={`px-6 border-b border-zinc-300 ${triggerEjecutado ? 'bg-white' : 'bg-transparent border-none'}`}
+              className={`rounded-t-2xl px-6 border-b border-zinc-300 ${triggerEjecutado ? 'bg-white' : 'bg-transparent border-none'}`}
               onClick={handleTrigger}
             >
               <ChatHeader triggerEjecutado={triggerEjecutado} />
             </AccordionTrigger>
-            <AccordionContent className='pb-1 bg-white'>
+            <AccordionContent className='pb-1 bg-red-500'>
               <div className='flex flex-col h-80'>
                 <ChatMessages className='px-2 py-3 flex-1' />
-                <ChatInput className='px-2' />
+                <ChatInput className='my-2 px-5' />
               </div>
             </AccordionContent>
           </div>

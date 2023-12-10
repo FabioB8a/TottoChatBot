@@ -83,8 +83,8 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
     })
     
     return (
-        <div {...props} className={cn('border-t border-zinc-1000', className)}>
-            <div className='relative mt-1 mr-1 ml-1 mb-1 flex-1 overflow-hidden rounded-lg outline-none'>
+        <div {...props} className={cn('', className)}>
+            <div className='relative mt-1 mr-1 ml-1 mb-1 flex-1 overflow-hidden rounded-full outline-none'>
                 <TextareaAutosize
                     onKeyDown={(e) => {
                         if (e.key === 'Enter' && !e.shiftKey){
@@ -110,7 +110,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
                     className='peer disabled:opacity-1 pr-16 resize-none block w-full border-0 bg-zinc-100 py-1.5 text-gray-900 focus:ring-0 text-sm sm:leading-6'
                 />
             
-        <div className='absolute inset-y-0 right-0 flex py-1.5 pr-1.5'>
+        <div className='absolute inset-y-0 right-0 flex mx-2 py-1.5 pr-1.5'>
           <kbd className='inline-flex items-center rounded border bg-white border-gray-200 px-1 font-sans text-xs text-gray-400'>
             {isPending ? (
               <Loader2 className='w-3 h-3 animate-spin' />
@@ -120,10 +120,7 @@ const ChatInput: FC<ChatInputProps> = ({ className, ...props }) => {
           </kbd>
         </div>
 
-            <div
-                className='absolute inset-x-0 bottom-0 border-t border-gray-300 peer-focus:border-t-2 peer-focus:border-red-600'
-                aria-hidden='true'
-                />
+            
             </div>
         </div>
     )
