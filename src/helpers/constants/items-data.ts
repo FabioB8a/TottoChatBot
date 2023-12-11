@@ -21,6 +21,10 @@ export const items = `
     <desc>Maleta De Viaje Archer 360° Expandible</desc>
     <precio>$559.900</precio>
     </item>
+    <url>https://co.totto.com/maleta-viaje-360-bazy-l-et17baz003-2220-b04/p</url>
+    <desc>Maleta De Viaje Bazy 360° Grande Blanca Bodega Rígida y Alta Resistencia</desc>
+    <precio>$319.900</precio>
+    </item>
 </content>
 </url>
 <url>
