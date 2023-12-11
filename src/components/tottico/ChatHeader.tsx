@@ -24,7 +24,7 @@ const ChatHeader: FC<{ trigger: boolean }> = ({ trigger }) => {
       ) : (
         <div className="flex items-center">
           <Image
-              src="/images/adv/globe.svg"
+              src="/images/adv/globe.png"
               alt="Search"
               width={130}
               height={100}
