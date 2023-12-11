@@ -23,9 +23,13 @@ const ChatHeader: FC<{ trigger: boolean }> = ({ trigger }) => {
       
       ) : (
         <div className="flex items-center">
-          <div className="relative bg-gray-300 p-4 rounded-ld shadow-md">
-            <p className="text-sm">Hola soy Tottico, tu asesor virtual</p>
-          </div>
+          <Image
+              src="/images/adv/globe.svg"
+              alt="Search"
+              width={130}
+              height={100}
+              className="mb-20 -mr-3"
+            />
           <div className="ml-2">
             <Image
               src="/images/logo/TOTTOid.png"
