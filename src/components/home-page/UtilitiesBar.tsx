@@ -13,7 +13,7 @@ const UtilitiesBar: FC = () => {
               height={50} 
               />
             </label>
-            <input className="border-b border-solid border-black border-t-0 border-l-0 border-r-0 border-b-2 w-20" />
+            <input className="border-t-0 border-l-0 border-r-0 border-b-0 w-20" />
           </div>
           <div>
           <Image
