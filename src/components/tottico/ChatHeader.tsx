@@ -22,7 +22,7 @@ const ChatHeader: FC<{ trigger: boolean }> = ({ trigger }) => {
       </div>
       
       ) : (
-        <div className="flex items-center">
+        <div className="flex items-center -mb-7">
           <Image
               src="/images/adv/globe.png"
               alt="Search"
