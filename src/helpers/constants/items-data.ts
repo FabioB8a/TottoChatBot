@@ -12,12 +12,12 @@ export const items = `
 <desc>TOTTO Travel colección MALETAS</desc>
 <content>
     <item>
-    <url>https://co.totto.com/maleta-viaje-360-travel-lite-m-et17tvl002-2320-n01/p?gad_source=1&gclid=CjwKCAiApuCrBhAuEiwA8VJ6JrBpwe_GKfiX-nQfl6BKsOEEGPktKIRbhINEIgHxLHEi9rYdZhKTVRoCn60QAvD_BwE</url>
+    <url>https://co.totto.com/maleta-viaje-360-travel-lite-l-et17tvl003-2320-n01/p</url>
     <desc>Maleta De Bodega Travel Lite 23 Kg Negra Ultra Liviana Producto Viaje Seguridad Travel Sentry Argollas para Candado Elaborado con 18 botellas plásticas</desc>
     <precio>$429.000</precio>
     </item>
     <item>
-    <url>https://co.totto.com/maleta-viaje-360-archer-et17sky006-2220-m50/p?uam=true&mobile=4&gad_source=1&gclid=CjwKCAiApuCrBhAuEiwA8VJ6JtA2hTHZ43qvrg-uIQi20SYISECbcKO1HRMB9lpKCWZWgXwVtl3TIBoCXmsQAvD_BwE</url>
+    <url>https://co.totto.com/maleta-viaje-360-archer-et17sky006-2220-m50/p</url>
     <desc>Maleta De Viaje Archer 360° Expandible Morado</desc>
     <precio>$559.900</precio>
     </item>
