@@ -12,7 +12,7 @@ export interface ChatGPTMessage {
 }
 
 export interface OpenAIStreamPayload {
-    model: 'gpt-4',
+    model: 'gpt-3.5-turbo',
     messages: ChatGPTMessage[],
     temperature: number,
     top_p: number,
