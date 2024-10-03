@@ -10,7 +10,7 @@ const Chat: FC = () => {
   const [trigger, settrigger] = useState(false);
 
   const handleTrigger = () => {
-    // Puedes realizar cualquier lógica adicional aquí antes de cambiar el estado
+    
     settrigger(!trigger);
   };
 
